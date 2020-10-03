@@ -23,6 +23,7 @@
       - "{{ transmission_external_port }}:51413"
       - "{{ transmission_external_port }}:51413/udp"
     env:
+      TRANSMISSION_WEB_HOME: "{{ transmission_web_home }}"
       TZ: "{{ ansible_nas_timezone }}"
       PUID: "{{ transmission_user_id }}"
       PGID: "{{ transmission_group_id }}"
