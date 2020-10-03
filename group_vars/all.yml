@@ -104,6 +104,9 @@ calibre_enabled: false
 # Ubooquity
 ubooquity_enabled: false
 
+# Unifi
+unifi_enabled: false
+
 # Joomla
 joomla_enabled: false
 
@@ -402,6 +405,20 @@ openvpn_username: leisure-suit-larry
 openvpn_password: secretpassword
 openvpn_provider: AWESOMEVPNPROVIDER
 openvpn_config: United-Kingdom
+
+###
+### Unifi
+###
+# The Unifi Controller uses a number of ports that are uncofigurable, Unifi devices need to communicate on them.
+# The following apps must have their default ports changed:
+# NextCloud (8080), Sickchill (8081), and NZBGet (6789).
+# REF: https://help.ubnt.com/hc/en-us/articles/218506997-UniFi-Ports-Used
+unifi_available_externally: "false"
+unifi_data_directory: "{{ docker_home }}/unifi/config"
+unifi_port_https: "8443"
+unifi_port_ssh: "10022"
+unifi_user_id: "1000"
+unifi_group_id: "1000"
 
 ###
 ### uTorrent

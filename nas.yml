@@ -256,6 +256,14 @@
     when: (serposcope_enabled | default(False))
     tags: serposcope
 
+  - import_tasks: tasks/unifi.yml
+    when:
+      - (unifi_enabled | default(False))
+      - not nextcloud_port == "8080"
+      - not sickchill_port == "8081"
+      - not nzbget_port == "6789"
+    tags: unifi
+
   - import_tasks: tasks/virtual_desktop.yml
     when: (virtual_desktop_enabled | default(False))
     tags: virtual_desktop
