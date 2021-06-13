@@ -279,6 +279,15 @@ samba_shares:
     writable: yes
     browsable: yes
     path: "{{ samba_shares_root }}/comics"
+  
+  - name: Media
+    comment: 'Media'
+    guest_ok: yes
+    public: yes
+    writable: yes
+    browsable: yes
+    path: "{{ samba_shares_root }}"
+
 
 ###
 ### NFS
