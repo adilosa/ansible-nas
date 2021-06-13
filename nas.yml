@@ -95,6 +95,10 @@
   - import_tasks: tasks/sonarr.yml
     when: (sonarr_enabled | default(False))
     tags: sonarr
+  
+  - import_tasks: tasks/sonarr_sma.yml
+    when: (sonarr_sma_enabled | default(False))
+    tags: sonarr_sma
 
   - import_tasks: tasks/radarr.yml
     when: (radarr_enabled | default(False))

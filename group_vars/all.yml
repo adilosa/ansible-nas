@@ -28,6 +28,7 @@ tautulli_enabled: false
 
 # Media Sourcing
 sonarr_enabled: false         # tv
+sonarr_sma_enabled: false         # tv
 sickchill_enabled: false
 couchpotato_enabled: false
 radarr_enabled: false
@@ -547,6 +548,11 @@ sonarr_download_directory: "{{ downloads_root }}"
 sonarr_user_id: "0"
 sonarr_group_id: "0"
 sonarr_port: "8989"
+
+###
+### Sonarr SMA
+###
+sonarr_sma_data_directory: "{{ docker_home }}/sonarr_sma/config"
 
 ###
 ### Radarr
