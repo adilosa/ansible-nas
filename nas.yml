@@ -263,9 +263,9 @@
   - import_tasks: tasks/unifi.yml
     when:
       - (unifi_enabled | default(False))
-      - not nextcloud_port == "8080"
-      - not sickchill_port == "8081"
-      - not nzbget_port == "6789"
+      - (not (nextcloud_enabled | default(False)) or not nextcloud_port == "8080")
+      - (not (sickchill_enabled | default(False)) or not sickchill_port == "8081")
+      - (not (nzbget_enbaled | default(False)) or not nzbget_port == "6789")
     tags: unifi
 
   - import_tasks: tasks/virtual_desktop.yml
